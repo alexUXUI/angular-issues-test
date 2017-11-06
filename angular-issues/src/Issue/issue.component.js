@@ -2,7 +2,6 @@
 import React from 'react';
 
 // Components
-import Comment from './Comments/comments.component';
 import User from './User/user.component';
 import GithubMenu from './Menu/menu.component';
 
