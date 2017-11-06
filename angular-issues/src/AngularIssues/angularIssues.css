@@ -1,0 +1,16 @@
+.issues {
+  width: 98%;
+  margin: auto;
+  font-family: 'Roboto Condensed';
+}
+
+.issues--skeleton {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.angular--logo {
+  height: 25px;
+}
