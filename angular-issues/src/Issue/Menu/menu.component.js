@@ -32,6 +32,6 @@ const GithubMenu = props => {
       </Menu.Item>
     </Menu>
   );
-}
+};
 
 export default GithubMenu;

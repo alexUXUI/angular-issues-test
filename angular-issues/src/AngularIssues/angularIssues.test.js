@@ -16,13 +16,21 @@ import { inspect } from 'util';
 // Redux config
 const middlewares = [];
 const mockStore = configureStore(middlewares);
+
+import mockData from '../mockData';
+
 const mockDefaultState = {
-  angularIssues: 'there are no issues -- sike!'
+  angularIssues: {
+    issues: mockData,
+  },
+  ui: {
+    isFetching: false,
+  }
 }
 
 describe('<AngularIssuesContainer>', () => {
 
-  let store, component, div;
+  let store, component, div, issues;
 
   beforeEach(() => {
     store = mockStore(mockDefaultState);
@@ -47,15 +55,17 @@ describe('<AngularIssuesContainer>', () => {
     );
   });
 
-  it('Has the correct children', () => {
+  it('Has the right props', () => {
 
-    const wrapperTwo = render(
-      <Provider store={store}>
-        <AngularIssuesContainer />
-      </Provider>
-    );
+    const {
+      angularIssues,
+      fetchAngularIssues,
+      isFetching,
+    } = component.find(AngularIssuesContainer).instance().selector.props;
 
-    var thingTwo = wrapperTwo.find('.issues__header');
-  })
+    expect(isFetching).toBe(false);
+    expect(angularIssues).toBeDefined();
+    expect(fetchAngularIssues).toBeInstanceOf(Function)
+  });
 
 });

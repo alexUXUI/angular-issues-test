@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AngularIssuesContainer from './AngularIssues/angularIssues.container';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <AngularIssuesContainer />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="App">
+    <AngularIssuesContainer />
+  </div>
+);
 
 export default App;

@@ -17,7 +17,7 @@ export const fetchAngularIssues = payload => (dispatch, getState) => {
     headers: new Headers({
       'content-type': 'application/json',
     }),
-  }
+  };
 
   return axios(REQUEST_URL, REQUEST).then(response => {
     if (response.status >= 200 && response.status < 300) {
@@ -31,9 +31,8 @@ export const fetchAngularIssues = payload => (dispatch, getState) => {
     console.warn('There was an error fetching Angular issues');
     dispatch(fetchAngularIssuesFail(null));
     dispatch(appIsNotFetching(null));
-  })
-
-}
+  });
+};
 
 export const fetchAngularIssuesSuccess = payload => ({
   type: FETCH_ANGULAR_ISSUES_SUCCESS,

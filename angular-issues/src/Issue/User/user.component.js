@@ -1,28 +1,13 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
-import {inspect} from 'util';
+import { Card } from 'semantic-ui-react'
 
-const extra = (
-  <a>
-    <Icon name='user' />
-    16 Friends
-  </a>
+const User = props => (
+  <Card
+    image={props.image}
+    header={props.login}
+    meta={props.type}
+    description={props.url}
+  />
 )
-
-const User = props => {
-  console.log(`user props ${inspect(props)}`)
-
-  const { image, url, login, type } = props;
-
-  return (
-    <Card
-      image={image}
-      header={login}
-      meta={type}
-      description={url}
-      extra={extra}
-    />
-  )
-}
 
 export default User;

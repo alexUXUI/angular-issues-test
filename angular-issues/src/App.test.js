@@ -5,8 +5,15 @@ import App from './App';
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
 
+import mockData from './mockData';
+
 const mockDefaultState = {
-  angularIssues: 'there are no issues -- sike!'
+  angularIssues: {
+    issues: mockData,
+  }, 
+  ui: {
+    isFetching: false,
+  }
 }
 
 const middlewares = [];
